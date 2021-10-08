@@ -139,7 +139,8 @@
 								"mutebuzzer" => 		array( "command" => "\xAA\xBB\x03\x02\x00\xEE", "return" => false ),
 								"unmutebuzzer" => 		array( "command" => "\xAA\xBB\x03\x02\x01\xEE", "return" => false ),
 								"activeport" => 		array( "command" => "\xAA\xBB\x03\x10\x00\xEE", "return" => true )
-
+							);
+							
 							return true;
 							break;
 						default:
