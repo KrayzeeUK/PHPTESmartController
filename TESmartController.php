@@ -90,21 +90,22 @@
 					switch ( $type ) {
 						case "TESMART8HDMI4K30":
 						case "TESMART8HDMI4K60":
-						$this->controller_type = $type;
-						$this->controller_ip = $ip;
-						$this->controller_port = $port;
-						$this->controller_set = true;
+							$this->controller_type = $type;
+							$this->controller_ip = $ip;
+							$this->controller_port = $port;
+							$this->controller_set = true;
 
-						$this->controller_commands = array(
-							"port1" => 				array( "command" => "\xAA\xBB\x03\x01\x01\xEE", "return" => false ),
-							"port2" => 				array( "command" => "\xAA\xBB\x03\x01\x02\xEE", "return" => false ),
-							"port3" => 				array( "command" => "\xAA\xBB\x03\x01\x03\xEE", "return" => false ),
-							"port4" => 				array( "command" => "\xAA\xBB\x03\x01\x04\xEE", "return" => false ),
-							"port5" => 				array( "command" => "\xAA\xBB\x03\x01\x05\xEE", "return" => false ),
-							"port6" => 				array( "command" => "\xAA\xBB\x03\x01\x06\xEE", "return" => false ),
-							"port7" =>	 			array( "command" => "\xAA\xBB\x03\x01\x07\xEE", "return" => false ),
-							"port8" => 				array( "command" => "\xAA\xBB\x03\x01\x08\xEE", "return" => false ),
-							"activeport" => 		array( "command" => "\xAA\xBB\x03\x10\x00\xEE", "return" => true )
+							$this->controller_commands = array(
+								"port1" => 				array( "command" => "\xAA\xBB\x03\x01\x01\xEE", "return" => false ),
+								"port2" => 				array( "command" => "\xAA\xBB\x03\x01\x02\xEE", "return" => false ),
+								"port3" => 				array( "command" => "\xAA\xBB\x03\x01\x03\xEE", "return" => false ),
+								"port4" => 				array( "command" => "\xAA\xBB\x03\x01\x04\xEE", "return" => false ),
+								"port5" => 				array( "command" => "\xAA\xBB\x03\x01\x05\xEE", "return" => false ),
+								"port6" => 				array( "command" => "\xAA\xBB\x03\x01\x06\xEE", "return" => false ),
+								"port7" =>	 			array( "command" => "\xAA\xBB\x03\x01\x07\xEE", "return" => false ),
+								"port8" => 				array( "command" => "\xAA\xBB\x03\x01\x08\xEE", "return" => false ),
+								"activeport" => 		array( "command" => "\xAA\xBB\x03\x10\x00\xEE", "return" => true )
+							);
 
 							return true;
 							break;
