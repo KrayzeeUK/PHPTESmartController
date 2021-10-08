@@ -68,6 +68,6 @@ PHP Based Class for controlling TESmart network KVMs
 
     echo $c1->last_error_message; // Display error mesage if any errors
    
-if you wish to donates or contributiosn to the work done and any future work then please use the link below. Thanks
+if you wish to donates or contributions to the work done and any future work then please use the link below. Thanks
 
 http://paypal.me/krayzeeuk
