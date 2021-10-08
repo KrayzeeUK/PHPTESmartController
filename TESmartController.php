@@ -23,17 +23,16 @@
 
 	*/
 
-
 	class TESmartController {
 
-		private $controller_type = NULL; // Controller type
-		private $controller_ip = NULL; // IP address of controller
-		private $controller_port = NULL; // port of controller
-		private $controller_commands = array(); // commands the controller accepts
-		private $controller_set = false; // false = controller not set
+		private $controller_type = NULL; 		// Controller type
+		private $controller_ip = NULL; 			// IP address of controller
+		private $controller_port = NULL; 		// port of controller
+		private $controller_commands = array();	// commands the controller accepts
+		private $controller_set = false; 		// false = controller not set
 
-		public $last_error_code = 0;
-		public $last_error_message = NULL;
+		public $last_error_code = 0;			// Error code for last error that accrued or 0 if none
+		public $last_error_message = NULL;		// human readable error message for last error
 
 		function __construct() {
 			// initialize an object's properties upon creation
@@ -43,7 +42,15 @@
 			// object is destructed or the script is stopped or exited
 		}
 
-		public function define_controller( string $type, string $ip, int $port ): bool {
+		/**
+		 * Setup device ready to be used
+		 *
+		 * @param string $type	Device name
+		 * @param string $ip	IP address of device
+		 * @param int $port		Port number to connect to device
+		 * @return bool			true if successful, false on failure
+		 */
+		public function define_controller(string $type, string $ip, int $port ): bool {
 
 			$this->last_error_code = 0;
 
@@ -119,7 +126,13 @@
 			return false;
 		}
 
-		public function send_command( string $command ) {
+		/**
+		 * function for sending commands to device
+		 *
+		 * @param string $command	Command to be sent to device
+		 * @return array|bool
+		 */
+		public function send_command(string $command ) {
 
 			$this->last_error_code = 0;
 
@@ -134,10 +147,17 @@
 				$this->last_error_message = "Please set the controller before attempting to call a command";
 				$this->last_error_code = 20; // device not set
 			}
+
 			return false;
 		}
 
-		private function call_command( string $command ) {
+		/**
+		 * Internal function for sending commands to device
+		 *
+		 * @param string $command	Command to be sent
+		 * @return array|bool
+		 */
+		private function call_command(string $command ) {
 
 			$this->last_error_code = 0;
 
